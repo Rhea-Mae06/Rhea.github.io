@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rhea Mae Bustamante Portfolio</title>
+<meta name="description" content="Nadia Cruz — Computer Science student and full-stack developer. Building compilers, systems, and premium web experiences.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:wght@300..800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ LOADER ============ -->
+<div class="loader" id="loader">
+  <div class="loader-mark">NC</div>
+  <div class="loader-bar"><span></span></div>
+</div>
+
+<!-- ============ CURSOR ============ -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- ============ PROGRESS BAR ============ -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ============ NOISE / GRADIENT BG ============ -->
+<div class="bg-noise"></div>
+<div class="bg-mesh" id="bgMesh">
+  <span class="orb orb-1"></span>
+  <span class="orb orb-2"></span>
+  <span class="orb orb-3"></span>
+</div>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar" id="navbar">
+  <a href="#home" class="nav-logo">Rhea</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home" class="active" data-section="home">Home</a></li>
+    <li><a href="#about" data-section="about">About</a></li>
+    <li><a href="#work" data-section="work">Work</a></li>
+    <li><a href="#contact" data-section="contact">Contact</a></li>
+  </ul>
+  <button class="nav-burger" id="navBurger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#work">Work</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <p class="eyebrow reveal-up"><span class="dot-live"></span> Available for opportunities · Tangub City, PH</p>
+      <h1 class="hero-title reveal-up">
+        Hi, I'm <span class="grad-text">Rhea Bustamante</span><br>
+        I build <span class="type-target" id="typeTarget"></span>
+      </h1>
+      <p class="hero-desc reveal-up">
+        BS Computer Science student crafting compilers, full-stack systems, and
+        interfaces engineered to feel expensive. I care about the pixel and the parser equally.
+      </p>
+      <div class="hero-actions reveal-up">
+        <a href="#work" class="btn btn-primary magnetic">
+          <span>View Projects</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-right reveal-scale">
+      <div class="portrait-frame" id="portraitFrame">
+        <div class="portrait-ring"></div>
+        <div class="portrait-glass">
+          <img src="images/profile.jpg" alt="Portrait of Nadia Cruz" class="portrait-img" loading="eager">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="#about" class="scroll-cue" aria-label="Scroll down">
+    <span></span>
+    <em>Scroll</em>
+  </a>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="section-head reveal-up">
+    <span class="section-tag">01 — About</span>
+    <h2>The person behind the <span class="grad-text">syntax tree</span></h2>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-copy reveal-up">
+      <p class="lead">
+        I'm a Computer Science student who treats software like a craft, not a checklist.
+        Somewhere between debugging a lexer at 2am and refining a border-radius by two pixels,
+        I found the work I actually want to do for a living.
+      </p>
+      <p>
+        My focus sits at the intersection of <strong>systems programming</strong> and
+        <strong>interface design</strong> — I like understanding a problem from the token
+        stream up, then wrapping the solution in something people enjoy using. Currently
+        building an online learning &amp; assessment platform as my thesis project, and a
+        browser-based compiler front-end called <em>Compile//</em> on the side.
+      </p>
+      <p>
+        Off-screen, I'm based in Tangub City, Misamis Occidental, chasing feasible ideas that
+        can actually ship — not just impress a rubric.
+      </p>
+    </div>
+
+    <div class="about-card reveal-up">
+      <div class="card-glass info-card">
+        <h3>Quick Info</h3>
+        <ul>
+          <li><span>Name</span><strong>Rhea Mae</strong></li>
+          <li><span>Role</span><strong>Software Engineer</strong></li>
+          <li><span>Study</span><strong>BS Computer Science</strong></li>
+          <li><span>School</span><strong>Tangub City Global College</strong></li>
+          <li><span>Address</span><strong>Bintana, Tangub City, Mis Occ</strong></li>
+          <li><span>Email</span><strong>rheamaeb17@gmail.com</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="work" id="work">
+  <div class="section-head reveal-up">
+    <span class="section-tag">02 — Selected Work</span>
+    <h2>Things I've <span class="grad-text">built &amp; shipped</span></h2>
+  </div>
+
+  <div class="projects" id="projectsList"></div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services" id="services">
+  <div class="section-head reveal-up">
+    <span class="section-tag">03 — What I Do</span>
+    <h2>Where I can <span class="grad-text">help</span></h2>
+  </div>
+  <div class="services-grid" id="servicesGrid"></div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="contact-grid">
+    <div class="contact-left reveal-up">
+      <span class="section-tag">04 — Contact</span>
+      <h2>Let's build something <span class="grad-text">worth remembering.</span></h2>
+      <p>Open to internships, junior roles, freelance projects, and thesis collaborations. I usually reply within a day.</p>
+
+      <div class="contact-info">
+        <a href="mailto:rheamaeb17@gmail.com" class="contact-row">
+          <span class="ci-label">Email</span>
+          <span class="ci-value">rheamaeb17@gmail.com</span>
+        </a>
+        <a href="tel:+639706733910" class="contact-row">
+          <span class="ci-label">Phone</span>
+          <span class="ci-value">09706733910</span>
+        </a>
+        <div class="contact-row">
+          <span class="ci-label">Address</span>
+          <span class="ci-value">Bintana, Tangub City, Misamis Occidental</span>
+        </div>
+      </div>
+
+      <div class="social-row">
+        <a href="https://github.com/Rhea-Mae06" class="social-pill" aria-label="GitHub" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.facebook.com/mae.pueblas.71" class="social-pill" aria-label="Facebook" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://myaccount.google.com/u/5/" class="social-pill" aria-label="Google" target="_blank" rel="noopener noreferrer">Google</a>
+        <a href="https://www.instagram.com/qt_yami/" class="social-pill" aria-label="Instagram" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.tiktok.com/@qt.yami" class="social-pill" aria-label="TikTok" target="_blank" rel="noopener noreferrer">TikTok</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-bottom">
+    <p>© <span id="year"></span> Rhea Mae. Designed &amp; built from scratch, pixel by pixel.</p>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+
+<script src="js/script.js"></script>
+</body>
+</html>
